@@ -16,7 +16,8 @@ body{
     height: 5rem;
 }
 
-.start{
+
+.content{
     max-width: 60rem;
     display: flex;
     flex-direction: column;
