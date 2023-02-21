@@ -21,6 +21,10 @@
         <p>나와 어울리는 놀이기구는?</p>
         <img src="img/main.png" />
         <button id="startBtn" type="button" class="btn btn-warning btn-lg" onclick="start();">시작하기</button>
+        
+        <a id="kakao-login-btn" href="javascript:loginWithKakao()">
+          <button id="startBtn" style="margin-top: 10%;" type="button" class="btn btn-warning btn-lg" onclick="start();">로그인</button>
+        </a>
     </div>
 
     <div class="content" id="question">
@@ -134,8 +138,8 @@
     Kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
-        title: '테스트',
-        description: '우리 테스트 해봐요',
+        title: '놀이기구 테스트',
+        description: '나랑 잘 어울리는 놀이기구는?',
         imageUrl:
           'https://ifh.cc/g/khVZma.png',
         link: {
@@ -156,7 +160,7 @@
 </script>
 
 
-<p id="token-result">안녕하세요</p>
+<p id="token-result"></p>
 
 <script>
   function loginWithKakao() {
