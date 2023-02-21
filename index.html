@@ -120,23 +120,55 @@
             }
     </script>
 
-    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
-    integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
-    <script>
-    Kakao.init('be75fd6e35075efca758e4a3f04a7479'); // 사용하려는 앱의 JavaScript 키 입력
-    </script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+  integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script>
+  Kakao.init('be75fd6e35075efca758e4a3f04a7479'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
 
-    <a id="kakaotalk-sharing-btn" href="javascript:shareMessage()">
-    <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+<a id="kakaotalk-sharing-btn" href="javascript:shareMessage()">
+  <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
     alt="카카오톡 공유 보내기 버튼" />
-    </a>
+</a>
 
-    <script>
-    function shareMessage() {
-    Kakao.Share.sendScrap({
-        requestUrl: 'https://developers.kakao.com',
+<script>
+  function shareMessage() {
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '테스트',
+        description: '우리 테스트 해봐요',
+        imageUrl:
+          'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+        link: {
+          // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+          mobileWebUrl: 'https://session4-mbti.netlify.app/',
+          webUrl: 'https://session4-mbti.netlify.app/',
+        },
+      },
+      social: {
+        likeCount: 286,
+        commentCount: 45,
+        sharedCount: 845,
+      },
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            mobileWebUrl: 'https://session4-mbti.netlify.app/',
+            webUrl: 'https://session4-mbti.netlify.app/',
+          },
+        },
+        {
+          title: '앱으로 보기',
+          link: {
+            mobileWebUrl: 'https://session4-mbti.netlify.app/',
+            webUrl: 'https://session4-mbti.netlify.app/',
+          },
+        },
+      ],
     });
-    }
-    </script>
+  }
+</script>
 </body>
 </html>
