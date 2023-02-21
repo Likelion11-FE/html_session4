@@ -21,6 +21,10 @@
         <p style="font-size: 2.5rem; align-self: center;">나와 어울리는 놀이기구는?</p>
         <img src="img/main.png" style="width:15rem; align-self: center;"/>
         <button id="startBtn" type="button" class="btn btn-warning btn-lg" onclick="start();">시작하기</button>
+        
+        <a id="kakao-login-btn" href="javascript:loginWithKakao()">
+          <button id="startBtn" style="margin-top: 10%;" type="button" class="btn btn-warning btn-lg" onclick="start();">로그인</button>
+        </a>
     </div>
 
     <div class="content" id="question">
@@ -158,7 +162,7 @@
 </script>
 
 
-<p id="token-result">안녕하세요</p>
+<p id="token-result"></p>
 
 <script>
   function loginWithKakao() {
