@@ -12,17 +12,20 @@
         Kakao.isInitialized();
     </script>
 </head>
-<body class="container">
-    <div style = "text-align :center;">
-        <img id="logo" src="img/logo.png">
-        <hr>
+<body>
+    <div class="header">
+        <img id="logo" src="img/logo.png" alt="로고">
+    </div>
+
+    <div class="start">
+        <p style="font-size: 2.5rem; align-self: center;">나와 어울리는 놀이기구는?</p>
+        <img src="img/main.png" style="width:15rem; align-self: center;"/>
+        <button id="startBtn" type="button" class="btn btn-warning btn-lg" onclick="start();">시작하기</button>
     </div>
     <article class="start">
         <h1 class="text-center"> 나와 어울리는 놀이기구는? <img src="img/main.png"></h1>
         <br><br><br>
         <button id="startBtn" type="button" class="btn btn-warning btn-lg mt-5" style="background-color: #FF6E3B; color: white;"onclick="start();">시작하기</button>
-        <a id="kakao-login-btn" href="javascript:loginWithKakao()"> <button id="loginBtn" type="button" class="btn btn-warning btn-lg mt-5" style="background-color: #FF6E3B; color: white;">로그인</button>
-        </a>
     </article>
     <article class="question">
         <div id="pgrNum">1/9</div>
@@ -30,17 +33,18 @@
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning mt-100" role="progressbar" style="width: calc(100/3*1%)"></div>
         </div>
         <div class="explain">
-            <h2 id="title" class="text-center mt-5 mb-5" style="font-size: 20px;">문제</h2>
+            <p id="title" style="font-size: 1.5rem;">문제</p>
         </div>
         <input id="type" type="hidden" value="AN">
-        <button id="A" type="button" class="btn btn-outline-warning btn-lg mt-3" style="font-size: 16px">Info</button>
-        <button id="B" type="button" class="btn btn-outline-warning btn-lg mt-3" style="font-size: 16px">Info</button>
-    </article>
-    <article class="result">
-        <img id="img" src="neptune.png">
-        <p id="ride" class="text-center mt-5" style="font-size: 30px">놀이기구 이름</p>
+        <button id="A" type="button" class="btn btn-outline-warning btn-lg mt-3" style="font-size: 1rem">Info</button>
+        <button id="B" type="button" class="btn btn-outline-warning btn-lg mt-3" style="font-size: 1rem">Info</button>
+    </div>
+
+    <div class="result">
+        <img id="img" src="logo.png">
+        <p id="ride" class="text-center mt-5" style="font-size: 2rem">놀이기구 이름</p>
         <div class="border border-warning">
-            <p id="explain" class="text-center p-2" style="font-size: 18px">설명</p>
+            <p id="explain" class="text-center p-2" style="font-size: 1.5rem">설명</p>
         </div>
         <div class="resultBtn">
             <button type="button" id="replay" class="btn btn-warning" onclick="window.location.reload();">다시하기</button><br>
@@ -48,7 +52,7 @@
             <a id="kakaotalk-sharing-btn" href="javascript:shareMessage()"><button type="button" id="share" class="btn btn-warning mt-2"  >공유하기</button></a>
         </div>
         <p class="maker">Developer 김지원, 이서연</p>
-    </article>
+    </div>
 
     <input type="hidden" id="AN" value="0">
     <input type="hidden" id="SN" value="0">
@@ -56,6 +60,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script>
+        $(".question").hide();
+        $(".result").hide();
+
         var num =1;
         var q = {
             1: {"title": "전자레인지에 불닭볶음면을 넣고 3분을 돌린 당신.", "type": "AN", "A": "A", "B": "B"},

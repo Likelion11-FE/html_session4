@@ -1,35 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Gowun+Dodum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
 
-
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gamja Flower', cursive;
+}
+.header {
+    width:100%; 
+    padding: 1rem 0 1rem 0; /*top right bottom left*/
+    text-align: center; 
+    border-bottom: 1px solid lightgray;
+}
 #logo{
     width: 5rem;
     height: 5rem;
 }
 
-article{
+.start{
+    max-width: 60rem;
     display: flex;
     flex-direction: column;
+    font-family: 'Gamja Flower', cursive;
+    padding: 0 5rem 0 5rem;
 }
-
 .A{
     font-size: 200px;
     padding: 500px;
 }
 
-.pgrNum{
-    font-family: 'Gowun Dodum', sans-serif;
-}
 
-.start{
-    font-family: 'Black Han Sans', sans-serif;
-    margin-top: 100px;
-}
-.strat btn{
-    padding: 5000px;
-}
 .question{
-    display: none;
-    font-family: 'Gowun Dodum', sans-serif;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gamja Flower', cursive;
     margin-top: 30px;
     margin-bottom: 80px;
 }
@@ -42,7 +45,7 @@ article{
 
 .result {
     display: none;
-    font-family: 'Gowun Dodum', sans-serif;
+    font-family: 'Gamja Flower', cursive;
     margin-top: 20px;
     margin-bottom: 50px;
 }
