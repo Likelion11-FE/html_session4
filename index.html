@@ -18,8 +18,8 @@
     </div>
 
     <div class="content" id="start">
-        <p style="font-size: 2.5rem; align-self: center;">나와 어울리는 놀이기구는?</p>
-        <img src="img/main.png" style="width:15rem; align-self: center;"/>
+        <p>나와 어울리는 놀이기구는?</p>
+        <img src="img/main.png" />
         <button id="startBtn" type="button" class="btn btn-warning btn-lg" onclick="start();">시작하기</button>
         
         <a id="kakao-login-btn" href="javascript:loginWithKakao()">
@@ -32,24 +32,22 @@
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning mt-100" role="progressbar" style="width: calc(100/3*1%)"></div>
         </div>
-        <div class="explain">
-            <p id="title" style="font-size: 1.5rem;">문제</p>
-        </div>
+        <p id="title" style="font-size: 1.5rem;">문제</p>
         <input id="type" type="hidden" value="AN">
         <button id="A" type="button" class="btn btn-outline-warning btn-lg mt-3" style="font-size: 1rem">Info</button>
         <button id="B" type="button" class="btn btn-outline-warning btn-lg mt-3" style="font-size: 1rem">Info</button>
     </div>
 
     <div class="content" id="result">
-        <img id="img" src="logo.png">
-        <p id="ride" class="text-center mt-5" style="font-size: 2rem">놀이기구 이름</p>
-        <div class="border border-warning">
-            <p id="explain" class="text-center p-2" style="font-size: 1.5rem">설명</p>
+        <img id="img" src="./img/logo.png">
+        <p id="ride" style="font-size: 2rem">놀이기구 이름</p>
+        <div style="word-break:break-all; padding:2rem; margin:5vh 0 5vh 0;border: 1px solid orange; border-radius: 5px;">
+            <span id="explain" style="font-size: 1.5rem">설명</span>
         </div>
         <div class="resultBtn">
-            <button type="button" id="replay" class="btn btn-warning" onclick="window.location.reload();">다시하기</button><br>
+            <button type="button" id="replay" class="btn btn-warning" onclick="window.location.reload();">다시하기</button>
             <button type="button" id="copy" class="btn btn-warning mt-2" role="alert" onclick="copy()">링크복사</button>
-            <a id="kakaotalk-sharing-btn" href="javascript:shareMessage()"><button type="button" id="share" class="btn btn-warning mt-2">공유하기</button></a>
+            <a id="kakaotalk-sharing-btn" href="javascript:shareMessage()"><button type="button" id="share" class="btn btn-warning mt-2" style="width: 100%;">공유하기</button></a>
         </div>
         <p class="maker">Developer 김지원, 이서연</p>
     </div>
@@ -70,7 +68,7 @@
             3: {"title": "지금 무슨노래 듣고계세요?", "type": "EN", "A": "A", "B": "B"}, 
         }
         var result = {
-            "ASE":{"ride": "범퍼카", "explain": "범퍼카 설명들어가야 됨", "img":"img/bumper-car.png"},
+            "ASE":{"ride": "범퍼카", "explain": "범퍼카 설명들어가야 됨dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "img":"img/bumper-car.png"},
             "ASN":{"ride": "디스코 팡팡", "explain": "디스코 팡팡 설명들어가야 됨", "img":"img/logo.png"},
             "ANN":{"ride": "사파리", "explain": "사파리 설명들어가야 됨", "img":"img/safari.png"},
             "NSE":{"ride": "롤러코스터", "explain": "롤러코스터 설명들어가야 됨", "img":"img/roller-coaster.png"},
