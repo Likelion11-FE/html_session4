@@ -45,6 +45,7 @@
         <div class="resultBtn">
             <button type="button" id="replay" class="btn btn-warning" onclick="window.location.reload();">다시하기</button><br>
             <button type="button" id="copy" class="btn btn-warning mt-2" role="alert" onclick="copy()">링크복사</button>
+            <a id="kakaotalk-sharing-btn" href="javascript:shareMessage()"><button type="button" id="share" class="btn btn-warning mt-2"  >공유하기</button></a>
         </div>
         <p class="maker">Developer 김지원, 이서연</p>
     </div>
@@ -121,7 +122,78 @@
             document.execCommand("copy");
             document.body.removeChild(textarea);
             alert("링크가 복사되었습니다.")
-        }
+            }
     </script>
+
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+  integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script>
+  Kakao.init('be75fd6e35075efca758e4a3f04a7479'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
+
+<script>
+  function shareMessage() {
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '테스트',
+        description: '우리 테스트 해봐요',
+        imageUrl:
+          'https://ifh.cc/g/khVZma.png',
+        link: {
+          // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+          webUrl: 'https://session4-mbti.netlify.app/',
+        },
+      },
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            webUrl: 'https://session4-mbti.netlify.app/',
+          },
+        },
+      ],
+    });
+  }
+</script>
+
+<a id="kakao-login-btn" href="javascript:loginWithKakao()">
+  <img src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="222"
+    alt="카카오 로그인 버튼" />
+</a>
+<p id="token-result"></p>
+
+<script>
+  function loginWithKakao() {
+    Kakao.Auth.authorize({
+      redirectUri: 'https://session4-mbti.netlify.app/oauth',
+    });
+  }
+
+  // 아래는 데모를 위한 UI 코드입니다.
+  displayToken()
+  function displayToken() {
+    var token = getCookie('authorize-access-token');
+
+    if(token) {
+      Kakao.Auth.setAccessToken(token);
+      Kakao.Auth.getStatusInfo()
+        .then(function(res) {
+          if (res.status === 'connected') {
+            document.getElementById('token-result').innerText
+              = 'login success, token: ' + Kakao.Auth.getAccessToken();
+          }
+        })
+        .catch(function(err) {
+          Kakao.Auth.setAccessToken(null);
+        });
+    }
+  }
+
+  function getCookie(name) {
+    var parts = document.cookie.split(name + '=');
+    if (parts.length === 2) { return parts[1].split(';')[0]; }
+  }
+</script>
 </body>
 </html>
