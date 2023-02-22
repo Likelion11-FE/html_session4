@@ -70,8 +70,11 @@ div, p {
     display: flex;
     flex-direction: column;
 }
+.resultBtn button{
+    font-size: 1.5rem;
+}
 #result .maker{
     margin-top: 10vh;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: rgb(70, 70, 70);
 }
