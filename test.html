@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유형테스트 만들기</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="testStyle.css"> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <!-- 시작 태그 -->
+    <div class="content" id="start">
+        <p>유형 테스트</p>
+        <button type="button" class="btn btn-warning" onclick="start();">시작하기</button>
+    </div>
+
+    <!-- 질문 태그 -->
+    <div class="content" id="question">
+        <p id="pgrNum">1/3</p> <!--질문 수를 나타냄-->
+        <div class="progress">
+            <!-- style 속성 바꾸기 -->
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning mt-100" role="progressbar" style="width: calc(100/3*1%)"></div>
+          </div>
+        <p id="title">문제</p>
+        <input type="hidden" id="type" value="EI"> <!-- EI중에 하나를 선택하는것을 표시하기 위해 -->
+        <button id="A" type="button" class="btn btn-outline-warning">mbti</button>
+        <button id="B" type="button" class="btn btn-outline-warning mt-3">mbti</button> <!-- mt-3 -->
+    </div>
+
+    <!-- 결과 태그 -->
+    <div class="content" id="result">
+        <p id="mbti"> mbti 결과</p>
+        <div class="result-btn">
+            <button type="button" id="replay" class="btn btn-warning" onclick="window.location.reload();">다시하기</button>
+            <button type="button" id="copy" class="btn btn-warning mt-4" role="alert" onclick="copy();">링크복사</button> <!-- mt-2 -->
+            <a id="kakaotalk-sharing-btn" href="javascript:shareMessage()"><button type="button" id="share" class="btn btn-warning mt-4" style="width: 100%;">공유하기</button></a>
+        </div>
+    </div>
+
+    <input type="hidden" id="EI" value="0">
+    <input type="hidden" id="SN" value="0">
+    <input type="hidden" id="TF" value="0">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    
+
+    <!-- 카카오 디벨로퍼 -->
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+  integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+
+<script>
+  Kakao.init('be75fd6e35075efca758e4a3f04a7479'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
+
+
+<script>
+    Kakao.init('5a0ceb9e10878825aea4875de3a5a176');
+    Kakao.isInitialized();
+</script>
+
+<script>
+  function shareMessage() {
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '놀이기구 테스트',
+        description: '나랑 잘 어울리는 놀이기구는?',
+        imageUrl:
+          'https://ifh.cc/g/khVZma.png',
+        link: {
+          // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+          webUrl: 'https://session4-mbti.netlify.app/',
+        },
+      },
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            webUrl: 'https://session4-mbti.netlify.app/',
+          },
+        },
+      ],
+    });
+  }
+</script>
+<script type="text/javascript" src="testJs.js"></script>
+</body>
+</html>
