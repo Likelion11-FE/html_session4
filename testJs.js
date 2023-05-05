@@ -4,9 +4,9 @@
         var num =1;
         console.log(num)
         var q = {
-            1: {"title": "첫 번째 질문", "type": "EI", "E": "E", "I": "I"},
-            2: {"title": "두 번째 질문", "type": "SN", "S": "S", "N": "N"}, 
-            3: {"title": "세 번째 질문", "type": "FT", "F": 'F', "T": "T"}, 
+            1: {"title": "첫 번째 질문", "type": "EI", "A": "E", "B": "I"},
+            2: {"title": "두 번째 질문", "type": "SN", "A": "S", "B": "N"}, 
+            3: {"title": "세 번째 질문", "type": "FT", "A": 'F', "B": "T"}, 
         }
         var result = {
             "ESF":{"mbti":"esf"},
